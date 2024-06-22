@@ -1,0 +1,1 @@
+in which we explore what a neural process is (the model, not the thing in the brain)

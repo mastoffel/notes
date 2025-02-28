@@ -1,2 +1,2 @@
 ![[nes.jpeg]]
-*siesta with elephant seal*
+*sleepy northern elephant seal and me*

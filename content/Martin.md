@@ -1,2 +1,2 @@
 ![[nes.jpeg]]
-*siesta with elephant seal*
+*siesta with an elephant seal*

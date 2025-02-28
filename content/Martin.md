@@ -1,1 +1,1 @@
-This is a page about me.
+![[nes.jpeg | an elephant seal and me on siesta]]

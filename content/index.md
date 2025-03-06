@@ -4,3 +4,7 @@ tags:
 ---
 
 Hi, I'm [[Martin]]. 
+
+[[now]]
+
+

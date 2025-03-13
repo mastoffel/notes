@@ -4,7 +4,8 @@ tags:
 ---
 
 Hi, I'm [[Martin]].\
-[[now|\now]], [[notes]]
+what I'm up to[[now|\now]], and [[notes]] in progress.
+
 ### blog
 *to come*
 

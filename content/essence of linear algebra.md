@@ -1,15 +1,12 @@
-from [3b1b](https://www.youtube.com/watch?v=fNk_zzaMoSs)
+Notes on the intro course from [3b1b](https://www.youtube.com/watch?v=fNk_zzaMoSs). 
 
-$$ \newcommand{\vect}[1]{\begin{bmatrix} #1 \end{bmatrix}} $$
 $$ \newcommand{\m}[1]{\begin{bmatrix} #1 \end{bmatrix}} $$
-
-
 ----
-## I) Vector basics
+## I) vector basics
 
 #### what's a vector
 - physics: arrows in space, defined by **length** and **direction** and are **movable**
-- cs: ordered lists of numbers, i.e. $\begin{bmatrix} 12.0 \\ 3.0 \end{bmatrix}$
+- cs: ordered lists of numbers, i.e. $\m{12.0 \\ 3.0}$
 - math: a mix of the above
 
 > *think about an arrow in a coordinate system, starting from the origin*
@@ -20,7 +17,7 @@ $$ \newcommand{\m}[1]{\begin{bmatrix} #1 \end{bmatrix}} $$
 ##### addition
 * each vectors is a step, a movement in space. First, walk $\vec{v}$, then $\vec{w}$.
 * this is the same as walking $\vec{v} + \vec{w}$ to start with!
-* $\begin{bmatrix} 1 \\ 2 \end{bmatrix} + \begin{bmatrix} 3 \\ -1 \end{bmatrix} = \begin{bmatrix} 1 + 3 \\ 2 + (-1) \end{bmatrix}$
+* $\m{1 \\ 2} + \m{3 \\ -1} = \m{1 + 3 \\ 2 + (-1)}$
 
 ![[Pasted image 20250311103751.png|300]]
 ##### multiplying by a scalar
@@ -38,7 +35,7 @@ $$ \newcommand{\m}[1]{\begin{bmatrix} #1 \end{bmatrix}} $$
 
 * $\vec{i}$: unit vector in x direction
 * $\vec{j}$: unit vector in y direction
-* so what is $\begin{bmatrix} 3 \\ -2 \end{bmatrix}$ ? Just the scaled $\vec{i}$ and $\vec{j}$ , i.e. $3\vec{i}  + (-2) \vec{j}$
+* so what is $\m{3 \\ -2}$ ? Just the scaled $\vec{i}$ and $\vec{j}$ , i.e. $3\vec{i}  + (-2) \vec{j}$
 * $\vec{i}$ and $\vec{j}$ are the **basis** of the coordinate system. We could have chosen a different one!
 * $3\vec{i}  + (-2) \vec{j}$ is a **linear combination** of those two vectors
 * the **span** of the two vectors $\vec{i}$ and $\vec{j}$ is the set of all their linear combinations!
@@ -73,7 +70,7 @@ $$ \newcommand{\m}[1]{\begin{bmatrix} #1 \end{bmatrix}} $$
 
 **How to describe a linear transformation numerically?**
 
-$\begin{bmatrix} X_{in} \\ y_{in} \end{bmatrix} ->???-> \begin{bmatrix} X_{out} \\ y_{out} \end{bmatrix}$
+$\m{X_{in} \\ y_{in}} \rightarrow ??? \rightarrow \m{X_{out} \\ y_{out}}$
 
 > [!Note] 
 > we only need to record where the basis vector $\hat{i}$ and $\hat{j}$ land, everything else goes from there
@@ -82,11 +79,11 @@ $\begin{bmatrix} X_{in} \\ y_{in} \end{bmatrix} ->???-> \begin{bmatrix} X_{out} 
 
 So more generally, let's say we know where the basis vectors land:
 
-$\hat{i} \rightarrow \begin{bmatrix} 1\\-2 \end{bmatrix}$ , $\hat{j} \rightarrow \begin{bmatrix} 3\\0 \end{bmatrix}$
+$\hat{i} \rightarrow \m{1 \\-2}$ , $\hat{j} \rightarrow \m{3\\0}$
 
-now where does an arbitrary vector $\begin{bmatrix} x\\y \end{bmatrix}$ land?
+now where does an arbitrary vector $\m{x\\y}$ land?
 
-$\begin{bmatrix} x\\y \end{bmatrix} \rightarrow x\begin{bmatrix} 1 \\ -2 \end{bmatrix} + y\begin{bmatrix} 3 \\ 0 \end{bmatrix} \rightarrow \begin{bmatrix} 1x + 3y \\ -2x + 0y \end{bmatrix}$  
+$\m{x\\y} \rightarrow x\m{1 \\ -2} + y\m{ 3 \\ 0} \rightarrow \m{ 1x + 3y \\ -2x + 0y }$  
 
 so we can say where any vector lands using this formula! 
 
@@ -117,19 +114,19 @@ Some insights:
 
 ![[Pasted image 20250313142755.png|400]]
 
-* $\hat{i}$ after the $M_1$ transformation lands on $\vect{1 \\ 1}$ , $\hat{j}$ lands on $\vect{-2 \\ 0}$ . 
-* where $\hat{i}$ lands after the $M_2$ transformation: $\vect{0 & 2 \\ 1 & 0} \vect{1 \\ 1} = 1\vect{0 \\ 1} + 1\vect{2 \\ 0} = \vect{2 \\ 1}$
-* where $\hat{j}$ lands after $M_2$ transformation:  $\vect{0 & 2 \\ 1 & 0} \vect{-2 \\ 0} = -2\vect{0 \\ 1} + 0\vect{2 \\ 0} = \vect{0 \\ -2}$ 
-* now just put the two together to get the composite: $\vect{2 & 0 \\ 1 & -2}$   
+* $\hat{i}$ after the $M_1$ transformation lands on $\m{1 \\ 1}$ , $\hat{j}$ lands on $\m{-2 \\ 0}$ . 
+* where $\hat{i}$ lands after the $M_2$ transformation: $\m{0 & 2 \\ 1 & 0} \m{1 \\ 1} = 1\m{0 \\ 1} + 1\m{2 \\ 0} = \m{2 \\ 1}$
+* where $\hat{j}$ lands after $M_2$ transformation:  $\m{0 & 2 \\ 1 & 0} \m{-2 \\ 0} = -2\m{0 \\ 1} + 0\m{2 \\ 0} = \m{0 \\ -2}$ 
+* now just put the two together to get the composite: $\m{2 & 0 \\ 1 & -2}$   
 
 #### Now the general solution, without memorizing:
 
 ![[Pasted image 20250313145414.png|400]]
 
-1. after the $M_1$ transformation, $\hat{i}$ lands on $\vect{e \\ g}$ 
-2. now where does $\vect{e \\ g}$ land after the $M_2$ transformation? $e \vect{a \\ c} + g \vect{b \\ d} = \vect{ae + bg \\ ce + dg}$ . Just a recap why that is: It's because $e$ and $g$ just scale where the basis vectors land (which is $\vect{a \\ c}$ and $\vect{b \\ d}$ ). This is because the resulting vector is linearly dependent. 
-3. now where does $\vect{f \\ h}$ land after the $M_2$ transformation? $f \vect{b \\ d} + h \vect{b \\ d} = \vect{af + bh \\ cf + dh}$ 
-4. then, we can just take those together as the first and second column of the composition matrix: $\vect{ae + bg & af + bh \\ ce + dg & cf + dh}$ 
+1. after the $M_1$ transformation, $\hat{i}$ lands on $\m{e \\ g}$ 
+2. now where does $\m{e \\ g}$ land after the $M_2$ transformation? $e \m{a \\ c} + g \m{b \\ d} = \m{ae + bg \\ ce + dg}$ . Just a recap why that is: It's because $e$ and $g$ just scale where the basis mors land (which is $\m{a \\ c}$ and $\m{b \\ d}$ ). This is because the resulting mor is linearly dependent. 
+3. now where does $\m{f \\ h}$ land after the $M_2$ transformation? $f \m{b \\ d} + h \m{b \\ d} = \m{af + bh \\ cf + dh}$ 
+4. then, we can just take those together as the first and second column of the composition matrix: $\m{ae + bg & af + bh \\ ce + dg & cf + dh}$ 
 
 > [!Note] What does matrix multiplication really represent?
 > Applying one transformation after another.
